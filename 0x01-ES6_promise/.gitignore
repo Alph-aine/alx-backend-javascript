@@ -8,3 +8,5 @@ package-lock.json
 # Ignore babel.config.js and .eslintrc.js files
 babel.config.js
 .eslintrc.js
+
+utils.js
