@@ -2,11 +2,8 @@
 /node_modules/
 
 # Ignore package.json and package-lock.json files
-package.json
 package-lock.json
 
 # Ignore babel.config.js and .eslintrc.js files
-babel.config.js
-.eslintrc.js
 tsconfig.json
 webpack.config.js
