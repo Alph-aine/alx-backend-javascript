@@ -1,25 +1,31 @@
-const assert = require('assert');
-const calculateNumber = require('./1-calcul');
+const assert = require("assert");
+const { it, describe } = require("mocha");
+const calculateNumber = require("./1-calcul");
 
-describe("Tests advanced calculateNumber function:", function(){
-    describe("Tests SUM function:", function(){
-        it("Returns 6.", function(){
-            assert.strictEqual(calculateNumber('SUM', 1.4, 4.5), 6)
-        })
-    })
-    describe("Tests SUBTRACT function:", function(){
-        it("Returns -4.", function(){
-            assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 4.5), -4)
-        })
-    })
-    describe("Tests DIVIDE function:", function(){
-        it("Returns 0.2.", function(){
-            assert.strictEqual(calculateNumber('DIVIDE', 1.4, 4.5), 0.2)
-        })
-    })
-    describe("Tests DIVIDE function W 0:", function(){
-        it("Returns 'Error'.", function(){
-            assert.strictEqual(calculateNumber('DIVIDE', 1.4, 0), 'Error')
-        })
-    })
-})
+describe("calculateNumber()", function() {
+
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("SUM", 1, 2);
+      assert.strictEqual(res, 3);
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("SUBTRACT", 1.4, 2.2);
+      assert.strictEqual(res, -1);
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("SUBTRACT", 4.9, 2.7);
+      assert.strictEqual(res, 2);
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("DIVIDE", 4, 2);
+      assert.strictEqual(res, 2);
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("DIVIDE", 1.7, 0);
+      assert.strictEqual(res, "Error");
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("DIVIDE", 1.4, 4.6);
+      assert.strictEqual(res, 0.2);
+    });
+});
